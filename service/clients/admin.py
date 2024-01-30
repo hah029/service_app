@@ -5,4 +5,4 @@ from clients.models import Client
 
 @admin.register(Client)
 class ClientAdmin(admin.ModelAdmin):
-    pass
+    list_display = ['user', 'company_name', 'full_address']

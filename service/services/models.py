@@ -8,6 +8,9 @@ class Service(models.Model):
     name = models.CharField(max_length=50)
     full_price = models.PositiveIntegerField()
 
+    def __str__(self) -> str:
+        return f'{self.name}'
+
 
 class Plan(models.Model):
     PLAN_TYPES = (
@@ -21,6 +24,9 @@ class Plan(models.Model):
         default=0,
         validators=[MaxValueValidator(100)]
     )
+
+    def __str__(self) -> str:
+        return f'{self.plan_type}'
 
 
 class Subscription(models.Model):
